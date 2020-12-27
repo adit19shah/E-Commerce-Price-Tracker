@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details of your Desired Product</title>
+</head>
+<body>
+<p> Product Name: {{ product_name }} </p>
+<p> Current Price: {{ current_price }} </p>
+{% if desired_price == "False" %}
+    <p> This item is not in your desired range. </p>
+{% else %}
+    <p> Hurray ! This item falls in your desired range. </p>
+{% endif %}
+<p> Product <a href="{{ product_link }}">Link</a> </p>
+</body>
+</html>

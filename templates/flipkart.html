@@ -1,0 +1,29 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title> Price Tracker </title>
+</head>
+<body id="overlay" >
+    <form action="{% url 'flipkart' %}" method="post">
+        {% csrf_token %}
+        <div class="form-row">
+            <label>Website Url: </label>
+            <input type="text" name="website">
+        </div>
+        <div class="form-row">
+            <label>Desired Price: </label>
+            <input type="text" name="desired_price">
+        </div>
+        <div class="form-row">
+            <label>E-mail: </label>
+            <input type="email" name="user_email">
+        </div>
+
+        <div class="text-center">
+            <button type="submit"> Submit </button>
+        </div>
+    </form>
+</body>
+</html>
