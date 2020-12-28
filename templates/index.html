@@ -1,13 +1,32 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <style>
+        body{
+            background-color:lightblue;
+        }
+        button{
+            background-color: lightsalmon;
+            color: black;
+            height: 40px;
+            width: 150px;
+            font-size: large;
+            cursor: pointer;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <h1> Welcome to Web Scrapping Application </h1>
-    <a href="/flipkart"> <button>Flipkart</button> </a>
-    <a href="/amazon"> <button>Amazon</button> </a>
-    <a href="/ebay"> <button>E-Bay</button> </a>
+<center>
+    <h1 style="margin-top: 50px;"> Welcome to Adidev Scrapers ! </h1>
+    <a href="/flipkart"> <button> <b>Flipkart</b></button> </a>
+    <a href="/amazon"> <button><b>Amazon</b></button> </a>
+    <a href="/ebay"> <button><b>E-Bay</b></button> </a>
+</center>
 </body>
 </html>

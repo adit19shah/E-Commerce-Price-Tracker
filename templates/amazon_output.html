@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Details of your Desired Product</title>
+    <style>
+        body{
+            background-color: whitesmoke;
+            font-size: x-large;
+        }
+    </style>
 </head>
 <body>
-<p> Product Name: {{ product_name }} </p>
-<p> Current Price: {{ current_price }} </p>
-<p> Availability: {{ availability }}</p>
+<center><h1> Details obtained after Scraping: </h1></center>
+<p> <strong>Product Name: </strong> {{ product_name }} </p>
+<p> <strong>Availability: </strong> {{ availability }}</p>
+<p> <strong> Current Price: </strong> {{ current_price }} </p>
 {% if desired_price == "False" %}
-    <p> This item is not in your desired range. </p>
+    <p style="color:red"> This item is not in your desired range. </p>
 {% else %}
-    <p> Hurray ! This item falls in your desired range. </p>
+    <p style="color:green"> Hurray ! This item falls in your desired range. </p>
 {% endif %}
-<p> Product <a href="{{ product_link }}">Link</a> </p>
+<p>Product <a href="{{ product_link }}">Link</a> </p>
 </body>
 </html>

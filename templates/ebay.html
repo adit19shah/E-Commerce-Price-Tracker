@@ -4,21 +4,42 @@
 <html lang="en">
 <head>
     <title> Price Tracker </title>
+    <style>
+        body{
+            background-color:lightblue;
+            font-size: x-large;
+        }
+        button{
+            background-color: lightsalmon;
+            color: black;
+            height: 40px;
+            width: 150px;
+            font-size: large;
+            cursor: pointer;
+        }
+        a{
+            text-decoration: none;
+        }
+        .form-row{
+            margin: 20px;
+        }
+    </style>
 </head>
 <body id="overlay" >
+<center><h1>E-bay Scraper</h1></center>
     <form action="{% url 'ebay' %}" method="post">
         {% csrf_token %}
         <div class="form-row">
-            <label>Website Url: </label>
-            <input type="text" name="website">
+            <label>Product Link: </label>
+            <input type="text" name="website" required style="width:60%;">
         </div>
         <div class="form-row">
             <label>Desired Price: </label>
-            <input type="text" name="desired_price" placeholder="(Enter in Dollars)">
+            <input type="text" name="desired_price" required placeholder="(In Dollars)">
         </div>
         <div class="form-row">
             <label>E-mail: </label>
-            <input type="email" name="user_email">
+            <input type="email" name="user_email" required style="width:40%;">
         </div>
 
         <div class="text-center">
