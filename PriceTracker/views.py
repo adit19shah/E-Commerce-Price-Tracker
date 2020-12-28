@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
+from PriceTracker.models import Flipkart
+from PriceTracker.models import Amazon
+from PriceTracker.models import Ebay
 from WebScraper import settings
 from selenium import webdriver
 import re
@@ -18,6 +21,11 @@ def flipkart(request):
         desired_price=request.POST.get('desired_price')
         user_email=request.POST.get('user_email')
 
+        t=Flipkart(URL=link,Desired_price=desired_price,Email=user_email,time=datetime.datetime.now())
+        t.save()
+
+
+        # Scraping part starts
         # use your webdriver's location in the below string
         driver = webdriver.Chrome(executable_path=r"C:\Users\91972\Downloads\chromedriver.exe")
 
@@ -55,6 +63,9 @@ def amazon(request):
         link=request.POST.get('website')
         desired_price=request.POST.get('desired_price')
         user_email=request.POST.get('user_email')
+
+        a=Amazon(URL=link,Desired_price=desired_price,Email=user_email,time=datetime.datetime.now())
+        a.save()
 
         # use your webdriver's location in the below string
         driver = webdriver.Chrome(executable_path=r"C:\Users\91972\Downloads\chromedriver.exe")
@@ -99,6 +110,9 @@ def ebay(request):
         link=request.POST.get('website')
         desired_price=request.POST.get('desired_price')
         user_email=request.POST.get('user_email')
+
+        e=Ebay(URL=link,Desired_price=desired_price,Email=user_email,time=datetime.datetime.now())
+        e.save()
 
         # use your webdriver's location in the below string
         driver = webdriver.Chrome(executable_path=r"C:\Users\91972\Downloads\chromedriver.exe")
