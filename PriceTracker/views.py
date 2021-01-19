@@ -54,6 +54,7 @@ def flipkart(request):
                 msg = "Mail Sent"
             else:
                 msg = "Mail could not be sent"
+            t.delete()     #Delete data of the user whose product has reached desired price
         context = {'product_name':product_details[0],'current_price':product_details[1],'desired_price':str(product_details[2]),'product_link':product_details[3]}
         return render(request,'display_output.html',context)
     return render(request, 'flipkart.html')
@@ -100,6 +101,7 @@ def amazon(request):
                 msg = "Mail Sent"
             else:
                 msg = "Mail could not be sent"
+            a.delete();         #Delete the data of user whose product has reached the desired price
         context = {'product_name': product_details[0], 'current_price': product_details[1],'availability':product_details[2],'desired_price': str(product_details[3]), 'product_link': product_details[4]}
         return render(request, '../templates/amazon_output.html', context)
     return render(request, '../templates/amazon.html')
@@ -142,6 +144,7 @@ def ebay(request):
                 msg = "Mail Sent"
             else:
                 msg = "Mail could not be sent"
+            e.delete()      #Delete data of the user whose product has reached desired price
         context = {'product_name': product_details[0], 'current_price': product_details[1],'desired_price': str(product_details[2]), 'product_link': product_details[3]}
         return render(request, 'display_output.html', context)
     return render(request, 'ebay.html')
