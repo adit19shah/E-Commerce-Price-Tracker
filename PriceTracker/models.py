@@ -8,7 +8,7 @@ import datetime
 # each E-commerce website is different.
 
 class Flipkart(models.Model):
-    URL  =  models.CharField(max_length=200)
+    URL  =  models.CharField(max_length=500)
     Desired_price = models.FloatField()
     Email =  models.EmailField()
     time =  models.DateTimeField(default=datetime.datetime.now())
@@ -17,7 +17,7 @@ class Flipkart(models.Model):
          return self.Email
 
 class Amazon(models.Model):
-    URL  =  models.CharField(max_length=200)
+    URL  =  models.CharField(max_length=500)
     Desired_price = models.FloatField()
     Email =  models.EmailField()
     time =  models.DateTimeField(default=datetime.datetime.now())
@@ -26,7 +26,7 @@ class Amazon(models.Model):
          return self.Email
 
 class Ebay(models.Model):
-    URL  =  models.CharField(max_length=200)
+    URL  =  models.CharField(max_length=500)
     Desired_price = models.FloatField()
     Email =  models.EmailField()
     time =  models.DateTimeField(default=datetime.datetime.now())
