@@ -8,6 +8,7 @@ from selenium import webdriver
 import re
 import datetime
 
+
 from django.http import HttpResponse
 import os
 
