@@ -164,7 +164,7 @@ def start():
     #scheduler.add_job(Check_Prices, 'interval', hours=24, name='clean_accounts', jobstore='default',id="my_class_method",replace_existing=True)
     scheduler.add_job(
         Check_Prices,
-        trigger=CronTrigger(minute="*/5"),  # Every 5 minutes
+        trigger=CronTrigger(hour="*/12"),  # Every 12 hours
         id="my_class_method",  # The `id` assigned to each job MUST be unique
         max_instances=1,
         replace_existing=True,
