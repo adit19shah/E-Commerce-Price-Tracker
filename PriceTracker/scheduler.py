@@ -2,7 +2,7 @@ import logging
 
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.executors.pool import ProcessPoolExecutor, ThreadPoolExecutor
-from django_apscheduler.jobstores import register_job, register_events
+from django_apscheduler.jobstores import register_job
 from apscheduler.triggers.cron import CronTrigger
 
 
@@ -169,7 +169,5 @@ def start():
         max_instances=1,
         replace_existing=True,
     )
-    # Add the scheduled jobs to the Django admin interface
-    register_events(scheduler)
 
     scheduler.start()
